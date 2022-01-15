@@ -104,25 +104,23 @@ public final class PnlContas extends javax.swing.JPanel {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        txtResultado = new javax.swing.JLabel();
-        lblResultado = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
+        lblTitulo = new javax.swing.JLabel();
+        jScrollPaneTabela = new javax.swing.JScrollPane();
         jContas = new javax.swing.JTable();
         txtBuscarId = new javax.swing.JTextField();
         btnBuscarPorId = new javax.swing.JButton();
         btnExcluir = new javax.swing.JButton();
         btnCadastrar = new javax.swing.JButton();
         btnEditar = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
+        lblNome = new javax.swing.JLabel();
         txtNomeCliente = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
+        lblInstituicaoFinanceira = new javax.swing.JLabel();
         txtAgenciaBancaria = new javax.swing.JComboBox();
-        jLabel3 = new javax.swing.JLabel();
+        lblSobrenome = new javax.swing.JLabel();
         txtSobrenomeCliente = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
+        lblTipoConta = new javax.swing.JLabel();
         txtTipoConta = new javax.swing.JComboBox();
-        jLabel6 = new javax.swing.JLabel();
+        painel = new javax.swing.JLabel();
 
         setMaximumSize(new java.awt.Dimension(1902, 1033));
         setMinimumSize(new java.awt.Dimension(1902, 1033));
@@ -135,20 +133,14 @@ public final class PnlContas extends javax.swing.JPanel {
         jPanel1.setPreferredSize(new java.awt.Dimension(1902, 1033));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        txtResultado.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jPanel1.add(txtResultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(1911, 264, 66, 54));
+        lblTitulo.setBackground(new java.awt.Color(255, 255, 255));
+        lblTitulo.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
+        lblTitulo.setForeground(new java.awt.Color(255, 255, 255));
+        lblTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTitulo.setText("Contas");
+        jPanel1.add(lblTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 50, 1720, 70));
 
-        lblResultado.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jPanel1.add(lblResultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(1713, 281, 191, 27));
-
-        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Contas");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 50, 1720, 70));
-
-        jScrollPane1.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jScrollPaneTabela.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
 
         jContas.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jContas.setModel(new javax.swing.table.DefaultTableModel(
@@ -174,9 +166,9 @@ public final class PnlContas extends javax.swing.JPanel {
                 jContasMouseClicked(evt);
             }
         });
-        jScrollPane1.setViewportView(jContas);
+        jScrollPaneTabela.setViewportView(jContas);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 470, 1190, 390));
+        jPanel1.add(jScrollPaneTabela, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 470, 1190, 390));
 
         txtBuscarId.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jPanel1.add(txtBuscarId, new org.netbeans.lib.awtextra.AbsoluteConstraints(1180, 210, 130, 40));
@@ -217,43 +209,43 @@ public final class PnlContas extends javax.swing.JPanel {
         });
         jPanel1.add(btnEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 390, 140, 50));
 
-        jLabel2.setBackground(new java.awt.Color(51, 51, 51));
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel2.setText("Nome");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 160, -1, -1));
+        lblNome.setBackground(new java.awt.Color(51, 51, 51));
+        lblNome.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        lblNome.setForeground(new java.awt.Color(51, 51, 51));
+        lblNome.setText("Nome");
+        jPanel1.add(lblNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 160, -1, -1));
 
         txtNomeCliente.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jPanel1.add(txtNomeCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 190, 240, 29));
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel5.setText("Instituição financeira");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 240, -1, -1));
+        lblInstituicaoFinanceira.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        lblInstituicaoFinanceira.setForeground(new java.awt.Color(51, 51, 51));
+        lblInstituicaoFinanceira.setText("Instituição financeira");
+        jPanel1.add(lblInstituicaoFinanceira, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 240, -1, -1));
 
         txtAgenciaBancaria.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         txtAgenciaBancaria.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Nubank", "Viacredi", "Sicoob", "Banco do Brasil", "Caixa", "Santander" }));
         jPanel1.add(txtAgenciaBancaria, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 290, 250, 29));
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel3.setText("Sobrenome");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 160, -1, -1));
+        lblSobrenome.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        lblSobrenome.setForeground(new java.awt.Color(51, 51, 51));
+        lblSobrenome.setText("Sobrenome");
+        jPanel1.add(lblSobrenome, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 160, -1, -1));
 
         txtSobrenomeCliente.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jPanel1.add(txtSobrenomeCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 190, 195, 32));
 
-        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel7.setText("Tipo de conta");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 240, 150, -1));
+        lblTipoConta.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        lblTipoConta.setForeground(new java.awt.Color(51, 51, 51));
+        lblTipoConta.setText("Tipo de conta");
+        jPanel1.add(lblTipoConta, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 240, 150, -1));
 
         txtTipoConta.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         txtTipoConta.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Carteira", "Poupança", "Corrente" }));
         jPanel1.add(txtTipoConta, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 290, 195, 29));
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/PnlPequeno.png"))); // NOI18N
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 120, -1, -1));
+        painel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/PnlPequeno.png"))); // NOI18N
+        jPanel1.add(painel, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 120, -1, -1));
 
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 1230));
     }// </editor-fold>//GEN-END:initComponents
@@ -377,19 +369,17 @@ public final class PnlContas extends javax.swing.JPanel {
     private javax.swing.JButton btnEditar;
     private javax.swing.JButton btnExcluir;
     private javax.swing.JTable jContas;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JLabel lblResultado;
+    private javax.swing.JScrollPane jScrollPaneTabela;
+    private javax.swing.JLabel lblInstituicaoFinanceira;
+    private javax.swing.JLabel lblNome;
+    private javax.swing.JLabel lblSobrenome;
+    private javax.swing.JLabel lblTipoConta;
+    private javax.swing.JLabel lblTitulo;
+    private javax.swing.JLabel painel;
     private javax.swing.JComboBox txtAgenciaBancaria;
     private javax.swing.JTextField txtBuscarId;
     private javax.swing.JTextField txtNomeCliente;
-    private javax.swing.JLabel txtResultado;
     private javax.swing.JTextField txtSobrenomeCliente;
     private javax.swing.JComboBox txtTipoConta;
     // End of variables declaration//GEN-END:variables
