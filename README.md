@@ -29,7 +29,7 @@ O quarto módulo que o sistema possui é o módulo "Despesas". Este módulo perm
 
 Este módulo também permite ao usuário listar na tabela somente as despesas registradas (Ou seja, somente as despesas que descontaram valor do saldo da conta do usuário) e verificar o total de despesas registradas através dos botões "Listar despesas registradas" e "Visualizar total de despesas" além de permitir realizar uma busca por tipo de despesa.
 
-![Modulo Receitas](https://user-images.githubusercontent.com/71890654/149631419-a734decb-46e0-4f18-907a-4e70465d13a0.png)
+![Modulo Despesas](https://user-images.githubusercontent.com/71890654/149631925-2f9001a9-6284-4fb1-aab9-e88793262274.png)
 
 O último módulo do sistema chamado "Transferências", permite aos usuários realizarem transferências entre as contas existentes no sistema. Ao realizar transferências, o valor transferido é descontado diretamente da conta de origem e adicionado ao saldo da conta de destino.
 
