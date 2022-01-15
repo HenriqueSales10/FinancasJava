@@ -1,6 +1,9 @@
 package telaPrincipal;
 
 import java.awt.Color;
+import java.awt.Image;
+import java.awt.Toolkit;
+import java.net.URL;
 import paineis.LigarPainel;
 import paineis.PnlContas;
 import paineis.PnlDespesas;
@@ -20,6 +23,11 @@ public class Principal extends javax.swing.JFrame {
     public Principal() {
         initComponents();
         setExtendedState(MAXIMIZED_BOTH);
+        
+        URL caminhLogo = getClass().getResource("/imagens/logo-sistema.png");
+        Image icone = Toolkit.getDefaultToolkit().getImage(caminhLogo);
+        this.setIconImage(icone);
+        
         this.setLocationRelativeTo(this);
         this.BtnHome.setSelected(true);
 
@@ -78,6 +86,7 @@ public class Principal extends javax.swing.JFrame {
         );
 
         BtnHome.setBackground(new java.awt.Color(0, 0, 0));
+        BtnHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icone-home.png"))); // NOI18N
         BtnHome.setText("Tela inicial");
         BtnHome.setColorHover(new java.awt.Color(0, 0, 0));
         BtnHome.setColorNormal(new java.awt.Color(0, 0, 0));
@@ -96,6 +105,7 @@ public class Principal extends javax.swing.JFrame {
         });
 
         BtnContas.setBackground(new java.awt.Color(0, 0, 0));
+        BtnContas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icn-contas.png"))); // NOI18N
         BtnContas.setText("Contas");
         BtnContas.setColorHover(new java.awt.Color(0, 0, 0));
         BtnContas.setColorNormal(new java.awt.Color(0, 0, 0));
@@ -114,6 +124,7 @@ public class Principal extends javax.swing.JFrame {
         });
 
         BtnDepositos.setBackground(new java.awt.Color(0, 0, 0));
+        BtnDepositos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icn-receitas.png"))); // NOI18N
         BtnDepositos.setText("Receitas");
         BtnDepositos.setColorHover(new java.awt.Color(0, 0, 0));
         BtnDepositos.setColorNormal(new java.awt.Color(0, 0, 0));
@@ -132,6 +143,7 @@ public class Principal extends javax.swing.JFrame {
         });
 
         BtnDespesas.setBackground(new java.awt.Color(0, 0, 0));
+        BtnDespesas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icn-despesas.png"))); // NOI18N
         BtnDespesas.setText("Despesas");
         BtnDespesas.setColorHover(new java.awt.Color(0, 0, 0));
         BtnDespesas.setColorNormal(new java.awt.Color(0, 0, 0));
@@ -150,6 +162,7 @@ public class Principal extends javax.swing.JFrame {
         });
 
         BtnTransferencias.setBackground(new java.awt.Color(0, 0, 0));
+        BtnTransferencias.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icn-transf.png"))); // NOI18N
         BtnTransferencias.setText("Transferências");
         BtnTransferencias.setColorHover(new java.awt.Color(0, 0, 0));
         BtnTransferencias.setColorNormal(new java.awt.Color(0, 0, 0));
