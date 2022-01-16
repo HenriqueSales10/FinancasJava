@@ -1,0 +1,121 @@
+-- phpMyAdmin SQL Dump
+-- version 5.0.2
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1:3306
+-- Tempo de geração: 16-Jan-2022 às 03:41
+-- Versão do servidor: 8.0.21
+-- versão do PHP: 7.3.21
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Banco de dados: `dbfinancaspessoais`
+--
+
+CREATE DATABASE IF NOT EXISTS `dbfinancaspessoais` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci;
+USE `dbfinancaspessoais`;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `agenciasbancarias`
+--
+
+DROP TABLE IF EXISTS `agenciasbancarias`;
+CREATE TABLE IF NOT EXISTS `agenciasbancarias` (
+  `idAgencia` int NOT NULL AUTO_INCREMENT,
+  `nomeAgencia` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`idAgencia`)
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Extraindo dados da tabela `agenciasbancarias`
+--
+
+INSERT INTO `agenciasbancarias` (`idAgencia`, `nomeAgencia`) VALUES
+(1, 'Nubank'),
+(2, 'Viacredi'),
+(3, 'Sicoob'),
+(4, 'Banco Inter'),
+(5, 'Banco do Brasil');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `contas`
+--
+
+DROP TABLE IF EXISTS `contas`;
+CREATE TABLE IF NOT EXISTS `contas` (
+  `id_conta` int NOT NULL AUTO_INCREMENT,
+  `nome` varchar(255) DEFAULT NULL,
+  `sobrenome` varchar(255) DEFAULT NULL,
+  `instituicaoFinanceira` varchar(255) DEFAULT NULL,
+  `tipoConta` varchar(255) DEFAULT NULL,
+  `saldo` double DEFAULT NULL,
+  `total_receitas` double NOT NULL,
+  `total_despesas` double NOT NULL,
+  PRIMARY KEY (`id_conta`)
+) ENGINE=MyISAM AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Estrutura da tabela `despesas`
+--
+
+DROP TABLE IF EXISTS `despesas`;
+CREATE TABLE IF NOT EXISTS `despesas` (
+  `id_despesa` int NOT NULL AUTO_INCREMENT,
+  `numero_conta` int DEFAULT NULL,
+  `descricao` varchar(255) DEFAULT NULL,
+  `tipo_despesa` varchar(255) DEFAULT NULL,
+  `data_despesa` varchar(11) DEFAULT NULL,
+  `data_despesa_esperado` varchar(11) DEFAULT NULL,
+  `despesa_registrada` varchar(3) DEFAULT NULL,
+  `valor_despesa` double DEFAULT NULL,
+  PRIMARY KEY (`id_despesa`)
+) ENGINE=MyISAM AUTO_INCREMENT=48 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+--
+-- Estrutura da tabela `receitas`
+--
+
+DROP TABLE IF EXISTS `receitas`;
+CREATE TABLE IF NOT EXISTS `receitas` (
+  `id_receita` int NOT NULL AUTO_INCREMENT,
+  `id_conta` varchar(45) DEFAULT NULL,
+  `data_Recebimento` varchar(11) DEFAULT NULL,
+  `data_RecebimentoEsperado` varchar(11) DEFAULT NULL,
+  `descricao` varchar(255) DEFAULT NULL,
+  `tipo_Receita` varchar(255) DEFAULT NULL,
+  `valor_receita` double DEFAULT NULL,
+  `saldo` double DEFAULT NULL,
+  `recebimentoRegistrado` varchar(3) DEFAULT NULL,
+  PRIMARY KEY (`id_receita`)
+) ENGINE=MyISAM AUTO_INCREMENT=51 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Estrutura da tabela `transferencias`
+--
+
+DROP TABLE IF EXISTS `transferencias`;
+CREATE TABLE IF NOT EXISTS `transferencias` (
+  `id_transferencia` int NOT NULL AUTO_INCREMENT,
+  `conta_origem` int DEFAULT NULL,
+  `conta_destino` int DEFAULT NULL,
+  `valor_transferencia` double DEFAULT NULL,
+  PRIMARY KEY (`id_transferencia`)
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
