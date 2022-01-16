@@ -36,4 +36,11 @@ O último módulo do sistema chamado "Transferências", permite aos usuários re
 
 ![Modulo Transferencias](https://user-images.githubusercontent.com/71890654/149642462-f2233922-e698-462d-ab67-f9a1379207e2.png)
 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Utilização dos módulos presentes no sistema
+
+--> Módulo "Contas"
+
+![Contas](https://user-images.githubusercontent.com/71890654/149642899-f90dc08d-8e54-4fb9-a00a-a00fe3cc2ee7.gif)
+
 
