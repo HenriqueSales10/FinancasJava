@@ -3,7 +3,7 @@
  
 Versão do JDK: 14.0.1 Versão do NetBeans: 8.2 Versão do Wamp: 3.2.3 64bit
  
-Para que o programa funcione corretamente, é necessário iniciar o WampServer e logo após, executar o script do banco de dados presente neste repositório no MySQL Workbench ou o banco de dados desejado para criar a base de dados.
+Para que o programa funcione corretamente, é necessário iniciar o WampServer e logo após, executar o script do banco de dados presente neste repositório NO ARQUIVO "dbfinancaspessoais" no MySQL Workbench ou o banco de dados desejado para criar a base de dados.
 
 Após criar a base de dados, deve-se importar o projeto para o NetBeans, após importar, é necessário verificar se as bibliotecas do programa (presentes na pasta "lib" do repositório) foram importadas corretamente no pacote das bibliotecas. Caso não tenham sido, é necessário adicioná-las no pacote "Bibliotecas" do projeto, caso contrário, o programa não funcionará.
 
