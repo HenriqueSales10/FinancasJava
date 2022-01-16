@@ -22,13 +22,13 @@ O segundo módulo que o sistema apresenta é o módulo "Contas". Neste módulo, 
 
 O terceiro módulo que o sistema possui é o módulo "Receitas". Este módulo permite ao usuário realizar o controle de suas receitas. Ao cadastrar a receita no sistema, o valor da receita não é adicionado diretamente na conta do usuário. Para que isto ocorra, deve-se registrar o recebimento da receita através do botão "Registrar recebimento". 
 
-Este módulo também permite ao usuário listar na tabela somente as receitas registradas (Ou seja, somente as receitas que adicionaram valor do saldo da conta do usuário) e verificar o total de receitas registradas através dos botões "Listar receitas registradas" e "Visualizar total de receitas" além de permitir realizar uma busca por tipo de receita.
+Este módulo também permite ao usuário listar na tabela somente as receitas registradas (Ou seja, somente as receitas que adicionaram valor do saldo da conta do usuário) e verificar o total de receitas registradas através dos botões "Listar receitas registradas" e "Valor total de receitas" além de permitir realizar uma busca por tipo de receita.
 
 ![Receitas](https://user-images.githubusercontent.com/71890654/149644704-e57d78a2-fcc9-405d-bcbc-7a9f86f3c5ac.gif)
 
 O quarto módulo que o sistema possui é o módulo "Despesas". Este módulo permite ao usuário realizar o controle de suas despesas. Ao cadastrar a despesa no sistema, o valor da despesa não é descontado diretamente na conta do usuário. Para que isto ocorra, deve-se registrar a despesa através do botão "Registrar despesa". 
 
-Este módulo também permite ao usuário listar na tabela somente as despesas registradas (Ou seja, somente as despesas que descontaram valor do saldo da conta do usuário) e verificar o total de despesas registradas através dos botões "Listar despesas registradas" e "Visualizar total de despesas" além de permitir realizar uma busca por tipo de despesa.
+Este módulo também permite ao usuário listar na tabela somente as despesas registradas (Ou seja, somente as despesas que descontaram valor do saldo da conta do usuário) e verificar o total de despesas registradas através dos botões "Listar despesas registradas" e "Valor total de despesas" além de permitir realizar uma busca por tipo de despesa.
 
 ![Despesas](https://user-images.githubusercontent.com/71890654/149644901-11171c5a-e2b8-4018-a421-93613ae5dc5d.gif)
 
