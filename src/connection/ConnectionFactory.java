@@ -2,6 +2,7 @@ package connection;
 
 import java.sql.*;
 import java.util.logging.*;
+import javax.swing.JOptionPane;
 
 /**
  * <h1>Classe responsável pela conexão com o banco</h1>
@@ -36,7 +37,9 @@ public class ConnectionFactory {
             Class.forName(DRIVER);
             return DriverManager.getConnection(URL, USER, PASS);
         } catch (ClassNotFoundException | SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Não foi possível estabelecer a coneção com o banco de dados");
             throw new RuntimeException("Erro na conexão: ", ex);
+            
         }
     }
 
@@ -46,7 +49,6 @@ public class ConnectionFactory {
                 con.close();
             }
         } catch (SQLException ex) {
-            Logger.getLogger(ConnectionFactory.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

@@ -496,6 +496,7 @@ public final class PnlReceitas extends javax.swing.JPanel {
     }//GEN-LAST:event_btnCadastrarActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        limparCampos();
 //Validação para verificar se o usuário informou o número da conta
         if (txtNumConta.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Insira o número da conta.");

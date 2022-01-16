@@ -3,7 +3,12 @@ package dao;
 import connection.ConnectionFactory;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import model.Contas;
 import model.Transferencias;
@@ -49,6 +54,8 @@ public class TransferenciasDAO {
             stmt3.setInt(2, transf.getConta_destino());
             stmt3.setDouble(3, transf.getValor_transferencia());
             
+            stmt3.executeUpdate();
+            
             JOptionPane.showMessageDialog(null, "Transferência registrada com sucesso! O saldo da conta foi atualizado.");
         } catch (SQLException ex) {
             System.out.println(ex);
@@ -60,5 +67,43 @@ public class TransferenciasDAO {
         }
             
     }
+    
+    
+     public List<Transferencias> listarTransferencias(int numConta) {
 
+        Connection con = ConnectionFactory.getConnection();
+        
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+
+        List<Transferencias> transferencias = new ArrayList<>();
+
+        try {
+            stmt = con.prepareStatement("SELECT * FROM transferencias where conta_origem = ?");
+            stmt.setInt(1, numConta);
+            rs = stmt.executeQuery();
+
+            while (rs.next()) {
+
+                Transferencias transferencia = new Transferencias();
+
+                transferencia.setId_transferencia(rs.getInt("id_transferencia"));
+                transferencia.setConta_origem(rs.getInt("conta_origem"));
+                transferencia.setConta_destino(rs.getInt("conta_destino"));
+                transferencia.setValor_transferencia(rs.getDouble("valor_transferencia"));
+
+                transferencias.add(transferencia);
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(TransferenciasDAO.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            ConnectionFactory.closeConnection(con, stmt, rs);
+        }
+
+        return transferencias;
+
+    }
+    
+    
 }

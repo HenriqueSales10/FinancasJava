@@ -4,8 +4,9 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/D:/Projetos%20NetBeans/FinancasJava/src/paineis/PnlTransferencias.java</file>
+            <file>file:/D:/Projetos%20NetBeans/FinancasJava/src/dao/ReceitasDAO.java</file>
             <file>file:/D:/Projetos%20NetBeans/FinancasJava/src/paineis/PnlDespesas.java</file>
-            <file>file:/D:/Projetos%20NetBeans/FinancasJava/src/paineis/PnlReceitas.java</file>
+            <file>file:/D:/Projetos%20NetBeans/FinancasJava/src/dao/TransferenciasDAO.java</file>
         </group>
     </open-files>
 </project-private>
