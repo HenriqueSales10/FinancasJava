@@ -75,11 +75,11 @@ public final class PnlTransferencias extends javax.swing.JPanel {
         jLabel10.setForeground(new java.awt.Color(51, 51, 51));
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel10.setText("Número da conta de origem");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 490, 550, -1));
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 470, 550, -1));
 
         numContaDe.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         numContaDe.setForeground(new java.awt.Color(51, 51, 51));
-        jPanel1.add(numContaDe, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 540, 150, 30));
+        jPanel1.add(numContaDe, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 520, 150, 30));
 
         btnPesqDe.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         btnPesqDe.setText("Pesquisar");
@@ -88,36 +88,38 @@ public final class PnlTransferencias extends javax.swing.JPanel {
                 btnPesqDeActionPerformed(evt);
             }
         });
-        jPanel1.add(btnPesqDe, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 540, -1, -1));
+        jPanel1.add(btnPesqDe, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 520, -1, -1));
 
         lblNome.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         lblNome.setForeground(new java.awt.Color(51, 51, 51));
+        lblNome.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblNome.setText("Transferir de:");
-        jPanel1.add(lblNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 600, -1, -1));
+        jPanel1.add(lblNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 580, 570, -1));
 
         txtNome.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         txtNome.setForeground(new java.awt.Color(51, 51, 51));
-        jPanel1.add(txtNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 600, 210, 30));
+        txtNome.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jPanel1.add(txtNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 610, 550, 30));
 
         lblSaldoAtual.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         lblSaldoAtual.setForeground(new java.awt.Color(0, 102, 0));
         lblSaldoAtual.setText("Saldo");
-        jPanel1.add(lblSaldoAtual, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 590, -1, 50));
+        jPanel1.add(lblSaldoAtual, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 650, -1, 40));
 
         txtSaldoAtual.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         txtSaldoAtual.setForeground(new java.awt.Color(0, 102, 0));
-        jPanel1.add(txtSaldoAtual, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 590, 120, 50));
+        jPanel1.add(txtSaldoAtual, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 650, 120, 40));
 
         lblDestino.setBackground(new java.awt.Color(0, 0, 0));
         lblDestino.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         lblDestino.setForeground(new java.awt.Color(51, 51, 51));
         lblDestino.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblDestino.setText("Número da conta de destino");
-        jPanel1.add(lblDestino, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 670, 550, -1));
+        jPanel1.add(lblDestino, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 720, 550, -1));
 
         numContaPara.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         numContaPara.setForeground(new java.awt.Color(51, 51, 51));
-        jPanel1.add(numContaPara, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 740, 150, 30));
+        jPanel1.add(numContaPara, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 760, 150, 30));
 
         btnPesqPara.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         btnPesqPara.setText("Pesquisar");
@@ -126,12 +128,13 @@ public final class PnlTransferencias extends javax.swing.JPanel {
                 btnPesqParaActionPerformed(evt);
             }
         });
-        jPanel1.add(btnPesqPara, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 740, 110, -1));
+        jPanel1.add(btnPesqPara, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 760, 110, -1));
 
         lblNomePara.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         lblNomePara.setForeground(new java.awt.Color(51, 51, 51));
+        lblNomePara.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblNomePara.setText("Transferir para:");
-        jPanel1.add(lblNomePara, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 800, 170, -1));
+        jPanel1.add(lblNomePara, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 810, 550, -1));
 
         txtNomePara.setBackground(new java.awt.Color(51, 51, 51));
         txtNomePara.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -140,11 +143,10 @@ public final class PnlTransferencias extends javax.swing.JPanel {
         jPanel1.add(txtNomePara, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 840, 550, 30));
 
         lblValor.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        lblValor.setForeground(new java.awt.Color(0, 102, 0));
         lblValor.setText("Valor");
         jPanel1.add(lblValor, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 890, -1, 50));
 
-        txtValorTransf.setBackground(new java.awt.Color(0, 102, 0));
+        txtValorTransf.setBackground(new java.awt.Color(0, 0, 0));
         txtValorTransf.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         txtValorTransf.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.add(txtValorTransf, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 890, 190, 50));
@@ -156,7 +158,7 @@ public final class PnlTransferencias extends javax.swing.JPanel {
                 btnTransfActionPerformed(evt);
             }
         });
-        jPanel1.add(btnTransf, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 970, 150, 60));
+        jPanel1.add(btnTransf, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 970, 150, 60));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/PnlGrande.png"))); // NOI18N
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 440, -1, -1));
@@ -216,6 +218,11 @@ public final class PnlTransferencias extends javax.swing.JPanel {
             }
 
         }
+        
+        encontradoDe = false;
+        encontradoPara = false;
+        
+        camposVisiveis();
 
     }//GEN-LAST:event_btnTransfActionPerformed
 

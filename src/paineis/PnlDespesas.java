@@ -325,7 +325,7 @@ public final class PnlDespesas extends javax.swing.JPanel {
 
         txtNumConta.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         txtNumConta.setForeground(new java.awt.Color(51, 51, 51));
-        jPanel1.add(txtNumConta, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 170, 280, 30));
+        jPanel1.add(txtNumConta, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 170, 120, 30));
 
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jButton1.setText("Pesquisar");
@@ -334,7 +334,7 @@ public final class PnlDespesas extends javax.swing.JPanel {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 170, -1, -1));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 170, -1, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/PnlPequeno.png"))); // NOI18N
         jLabel2.setText("jLabel2");
@@ -456,9 +456,7 @@ public final class PnlDespesas extends javax.swing.JPanel {
 
             Contas cont = new Contas();
 
-            int numConta = Integer.parseInt(txtNumConta.getText());
-
-            cDAO.encontrarConta(numConta);
+            cDAO.encontrarConta(Integer.parseInt(txtNumConta.getText()));
 
             if (cDAO.getEncontrou() == true) {
 
@@ -468,9 +466,9 @@ public final class PnlDespesas extends javax.swing.JPanel {
 
                 DespesasDAO daoDespesas = new DespesasDAO();
 
-                daoDespesas.listarDespesas(numConta);
+                daoDespesas.listarDespesas(Integer.parseInt(txtNumConta.getText()));
 
-                readJTable(numConta);
+                readJTable(Integer.parseInt(txtNumConta.getText()));
             }
 
         }
@@ -515,6 +513,7 @@ public final class PnlDespesas extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Selecione uma despesa para registrá-a no sistema.");
         }
 
+        readJTable(Integer.parseInt(txtIdCliente.getText()));
     }//GEN-LAST:event_btnRegistrarDespesaActionPerformed
 
     private void jTableDespesasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableDespesasMouseClicked
@@ -569,9 +568,7 @@ public final class PnlDespesas extends javax.swing.JPanel {
 
                 limparCampos();
 
-                int numeroConta = Integer.parseInt(txtNumConta.getText());
-
-                readJTable(numeroConta);
+                readJTable(Integer.parseInt(txtNumConta.getText()));
 
             }
         } else {
@@ -613,9 +610,7 @@ public final class PnlDespesas extends javax.swing.JPanel {
 
                 limparCampos();
 
-                int numeroConta = Integer.parseInt(txtNumConta.getText());
-
-                readJTable(numeroConta);
+                readJTable(Integer.parseInt(txtNumConta.getText()));
             }
         } else {
             JOptionPane.showMessageDialog(null, "Selecione uma despesa para excluir.");
@@ -629,9 +624,8 @@ public final class PnlDespesas extends javax.swing.JPanel {
         if (txtIdCliente.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Selecione o número da conta");
         } else {
-            ContasDAO cdao = new ContasDAO();
-            int idConta = Integer.parseInt(txtIdCliente.getText());
-            cdao.listarTotalDespesasPorId(idConta);
+            ContasDAO cdao = new ContasDAO();            
+            cdao.listarTotalDespesasPorId(Integer.parseInt(txtNumConta.getText()));
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 

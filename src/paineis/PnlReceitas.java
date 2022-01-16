@@ -35,8 +35,9 @@ public final class PnlReceitas extends javax.swing.JPanel {
 
     }
 
-  /**
-     * <h1>Método responsável por realizar a limpeza dos campos que contém a descrição, valor, data e data esperada das {@link Receitas} .</h1>
+    /**
+     * <h1>Método responsável por realizar a limpeza dos campos que contém a
+     * descrição, valor, data e data esperada das {@link Receitas} .</h1>
      *
      *
      * @see {@link limparCampos}
@@ -49,8 +50,9 @@ public final class PnlReceitas extends javax.swing.JPanel {
     }
 
     /**
-     * <h1>Método responsável por mostrar os dados referente às {@link Receitas} cadastradas no sistema
-     * através do recebimento dos dados na tabela jTableReceitas.</h1>
+     * <h1>Método responsável por mostrar os dados referente às {@link Receitas}
+     * cadastradas no sistema através do recebimento dos dados na tabela
+     * jTableReceitas.</h1>
      *
      *
      * @param numConta
@@ -78,17 +80,49 @@ public final class PnlReceitas extends javax.swing.JPanel {
         });
 
     }
-    
-     /**
-     * <h1>Método responsável por mostrar os dados referente às {@link Receitas} cadastradas no sistema
-     * através do recebimento dos dados na tabela jTableReceitas realizando uma filtragem pelo tipo da {@link Receitas} .</h1>
+    /**
+     * <h1>Método responsável por atualizar o valor contido nos campos referentes aos dados da conta.</h1>
+     *
+     *
+     * 
+     */
+    public void atualizarLabels(){
+        ContasDAO cDAO = new ContasDAO();
+
+            Contas cont = new Contas();
+
+            cDAO.encontrarConta(Integer.parseInt(txtNumConta.getText()));
+
+            if (cDAO.getEncontrou() == true) {
+                txtIdCliente.setText(Integer.toString(cDAO.getIdCliente()));
+                txtNome.setText(cDAO.getNomeCliente() + " " + cDAO.getSobrenomeCliente());
+                txtSaldoAtual.setText(Double.toString(cDAO.getSaldo()));
+
+                ReceitasDAO daoReceitas = new ReceitasDAO();
+
+                daoReceitas.listarReceitas(Integer.parseInt(txtNumConta.getText()));
+
+                readJTable(Integer.parseInt(txtNumConta.getText()));
+            }
+        if (Double.parseDouble(txtSaldoAtual.getText()) <= 0) {
+            txtSaldoAtual.setForeground(Color.red);
+            lblSaldoAtual.setForeground(Color.red);
+        } else {
+            txtSaldoAtual.setForeground(Color.green);
+            lblSaldoAtual.setForeground(Color.green);
+    }
+    }
+    /**
+     * <h1>Método responsável por mostrar os dados referente às {@link Receitas}
+     * cadastradas no sistema através do recebimento dos dados na tabela
+     * jTableReceitas realizando uma filtragem pelo tipo da {@link Receitas}
+     * .</h1>
      *
      *
      * @param tipo
      * @param idConta
      * @see {@link readJTableForId}
      */
-
     public void readJTableForTipo(String tipo, int idConta) {
 
         DefaultTableModel modelo = (DefaultTableModel) jTableReceitas.getModel();
@@ -110,10 +144,13 @@ public final class PnlReceitas extends javax.swing.JPanel {
         });
 
     }
-/**
-     * <h1>Método responsável por mostrar os dados referente às {@link Receitas} cadastradas no sistema
-     * através do recebimento dos dados na tabela jTableReceitas realizando uma filtragem com o objetivo de listar somente
-     * receitas registradas no sistema (Ou seja, {@link Receitas} que alteraram o saldo da {@link Contas}) .</h1>
+
+    /**
+     * <h1>Método responsável por mostrar os dados referente às {@link Receitas}
+     * cadastradas no sistema através do recebimento dos dados na tabela
+     * jTableReceitas realizando uma filtragem com o objetivo de listar somente
+     * receitas registradas no sistema (Ou seja, {@link Receitas} que alteraram
+     * o saldo da {@link Contas}) .</h1>
      *
      *
      * @param idConta
@@ -290,13 +327,14 @@ public final class PnlReceitas extends javax.swing.JPanel {
         lblIdCliente.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         lblIdCliente.setForeground(new java.awt.Color(51, 51, 51));
         lblIdCliente.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblIdCliente.setText("Número da conta");
-        jPanel1.add(lblIdCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(464, 220, 200, -1));
+        lblIdCliente.setText("Nº da conta");
+        jPanel1.add(lblIdCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 220, 190, -1));
 
         txtIdCliente.setBackground(new java.awt.Color(255, 255, 255));
         txtIdCliente.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         txtIdCliente.setForeground(new java.awt.Color(51, 51, 51));
-        jPanel1.add(txtIdCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 260, 160, 30));
+        txtIdCliente.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jPanel1.add(txtIdCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 260, 150, 30));
 
         lblNome.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         lblNome.setForeground(new java.awt.Color(51, 51, 51));
@@ -307,16 +345,18 @@ public final class PnlReceitas extends javax.swing.JPanel {
         txtNome.setBackground(new java.awt.Color(255, 255, 255));
         txtNome.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         txtNome.setForeground(new java.awt.Color(51, 51, 51));
-        jPanel1.add(txtNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 260, 240, 30));
+        txtNome.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jPanel1.add(txtNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 260, 290, 30));
 
         lblSaldoAtual.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         lblSaldoAtual.setForeground(new java.awt.Color(51, 51, 51));
         lblSaldoAtual.setText("Saldo atual");
-        jPanel1.add(lblSaldoAtual, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 220, -1, -1));
+        jPanel1.add(lblSaldoAtual, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 220, -1, -1));
 
         txtSaldoAtual.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         txtSaldoAtual.setForeground(new java.awt.Color(0, 102, 0));
-        jPanel1.add(txtSaldoAtual, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 260, 150, 30));
+        txtSaldoAtual.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jPanel1.add(txtSaldoAtual, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 260, 140, 30));
 
         jLabel9.setBackground(new java.awt.Color(0, 0, 0));
         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -424,8 +464,10 @@ public final class PnlReceitas extends javax.swing.JPanel {
 
         Receitas rec = new Receitas();
         ReceitasDAO dao = new ReceitasDAO();
-       
-        /**<h1>Validação para verificar se o usuário digitou as informações necessárias para realizar o cadastro da {@link Despesas}.</h1>*/
+
+        /** <h1>Validação para verificar se o usuário digitou as informações
+         * necessárias para realizar o cadastro da {@link Despesas}.</h1>
+         */
         if (txtIdCliente.getText().isEmpty() || txtDesc.getText().isEmpty()
                 || txtDeposito.getText().isEmpty() || txtDeposito.getText().equals("0")) {
 
@@ -444,11 +486,9 @@ public final class PnlReceitas extends javax.swing.JPanel {
 
             dao.criarReceita(rec);
 
-            limparCampos();
+            limparCampos();         
 
-            int numeroConta = Integer.parseInt(txtNumConta.getText());
-
-            readJTable(numeroConta);
+            readJTable(Integer.parseInt(txtNumConta.getText()));
 
         }
 
@@ -460,33 +500,7 @@ public final class PnlReceitas extends javax.swing.JPanel {
         if (txtNumConta.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Insira o número da conta.");
         } else {
-            ContasDAO cDAO = new ContasDAO();
-
-            Contas cont = new Contas();
-
-            int numConta = Integer.parseInt(txtNumConta.getText());
-
-            cDAO.encontrarConta(numConta);
-
-            if (cDAO.getEncontrou() == true) {
-                txtIdCliente.setText(Integer.toString(cDAO.getIdCliente()));
-                txtNome.setText(cDAO.getNomeCliente() + " " + cDAO.getSobrenomeCliente());
-                txtSaldoAtual.setText(Double.toString(cDAO.getSaldo()));
-
-                ReceitasDAO daoReceitas = new ReceitasDAO();
-
-                daoReceitas.listarReceitas(numConta);
-
-                readJTable(numConta);
-            }
-
-        }
-        if (Double.parseDouble(txtSaldoAtual.getText()) <= 0) {
-            txtSaldoAtual.setForeground(Color.red);
-            lblSaldoAtual.setForeground(Color.red);
-        }else{
-            txtSaldoAtual.setForeground(Color.green);
-            lblSaldoAtual.setForeground(Color.green);
+            atualizarLabels();
         }
 
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -506,7 +520,9 @@ public final class PnlReceitas extends javax.swing.JPanel {
             if (jTableReceitas.getValueAt(jTableReceitas.getSelectedRow(), 7).equals("Sim")) {
                 JOptionPane.showMessageDialog(null, "Receita já registrada no sistema, não é possível registrá-la novamente.");
             } else {
+                
                 dao.registrarReceita(rec);
+                atualizarLabels();
             }
         } else {
             JOptionPane.showMessageDialog(null, "Selecione uma receita para registrar.");
@@ -563,10 +579,8 @@ public final class PnlReceitas extends javax.swing.JPanel {
                 dao.editarReceitas(rec);
 
                 limparCampos();
-
-                int numeroConta = Integer.parseInt(txtNumConta.getText());
-
-                readJTable(numeroConta);
+                
+                readJTable(Integer.parseInt(txtNumConta.getText()));
 
             }
         } else {
@@ -606,9 +620,7 @@ public final class PnlReceitas extends javax.swing.JPanel {
 
                 limparCampos();
 
-                int numeroConta = Integer.parseInt(txtNumConta.getText());
-
-                readJTable(numeroConta);
+                readJTable(Integer.parseInt(txtNumConta.getText()));
             }
         } else {
             JOptionPane.showMessageDialog(null, "Selecione uma receita para excluir.");
@@ -622,8 +634,7 @@ public final class PnlReceitas extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Informe o número da conta");
         } else {
             ContasDAO cdao = new ContasDAO();
-            int idConta = Integer.parseInt(txtIdCliente.getText());
-            cdao.listarTotalReceitasPorId(idConta);
+            cdao.listarTotalReceitasPorId(Integer.parseInt(txtNumConta.getText()));
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 
