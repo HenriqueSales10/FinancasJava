@@ -18,7 +18,7 @@ O primeiro módulo é o módulo Home, que é apresentado sempre que o sistema é
 
 O segundo módulo que o sistema apresenta é o módulo "Contas". Neste módulo, é possível cadastrar, editar e excluir as contas bancárias presentes no sistema. Também é possível realizar a pesquisa de contas informando o ID da conta desejada.
 
-![Modulo Contas](https://user-images.githubusercontent.com/71890654/149642333-08cb0c47-e9dc-4e8a-ab03-137054e19048.png)
+![Contas](https://user-images.githubusercontent.com/71890654/149642899-f90dc08d-8e54-4fb9-a00a-a00fe3cc2ee7.gif)
 
 O terceiro módulo que o sistema possui é o módulo "Receitas". Este módulo permite ao usuário realizar o controle de suas receitas. Ao cadastrar a receita no sistema, o valor da receita não é adicionado diretamente na conta do usuário. Para que isto ocorra, deve-se registrar o recebimento da receita através do botão "Registrar recebimento". 
 
@@ -36,11 +36,7 @@ O último módulo do sistema chamado "Transferências", permite aos usuários re
 
 ![Modulo Transferencias](https://user-images.githubusercontent.com/71890654/149642462-f2233922-e698-462d-ab67-f9a1379207e2.png)
 
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Utilização dos módulos presentes no sistema
 
---> Módulo "Contas"
 
-![Contas](https://user-images.githubusercontent.com/71890654/149642899-f90dc08d-8e54-4fb9-a00a-a00fe3cc2ee7.gif)
 
 
